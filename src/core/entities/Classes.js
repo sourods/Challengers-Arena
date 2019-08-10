@@ -1,4 +1,9 @@
-export const Warrior = (character) =>{ //defense skills
+import WarriorPortrait from '../../portraits/classes/Warrior.png';
+import RoguePortrait from '../../portraits/classes/Rogue.png';
+import MagePortrait from '../../portraits/classes/Mage.png';
+import HunterPortrait from '../../portraits/classes/Hunter.png';
+
+export const Warrior = async (character) =>{ //defense skills
     character.maxHealth = 200;
     character.maxMana = 70;
     character.strength = 100;  
@@ -6,10 +11,10 @@ export const Warrior = (character) =>{ //defense skills
     character.speed = 50;
     character.defense = 150;
     character.class = 'Warrior';
-    return character;
+    character.portrait = WarriorPortrait;
 }
 
-export const Rogue = (character) => { //furtivity + blood stack
+export const Rogue = async (character) => { //furtivity + blood stack
     character.maxHealth = 100;
     character.maxMana = 100;
     character.strength = 100;
@@ -17,10 +22,10 @@ export const Rogue = (character) => { //furtivity + blood stack
     character.speed = 150;
     character.defense = 100;
     character.class = 'Rogue';
-    return character;
+    character.portrait = RoguePortrait
 }
 
-export const Mage = (character) => { //elemental stack skills
+export const Mage = async (character) => { //elemental stack skills
     character.maxHealth = 100;
     character.maxMana = 200;
     character.strength = 50;
@@ -28,10 +33,10 @@ export const Mage = (character) => { //elemental stack skills
     character.speed = 80;
     character.defense = 70;
     character.class = 'Mage';
-    return character;
+    character.portrait = MagePortrait
 }
 
-export const Hunter = (character) => { //trap skills
+export const Hunter = async (character) => { //trap skills
     character.maxHealth = 150;
     character.maxMana = 50;
     character.strength = 50;
@@ -39,5 +44,5 @@ export const Hunter = (character) => { //trap skills
     character.speed = 200;
     character.defense = 100;
     character.class = 'Hunter';
-    return character;
+    character.portrait = HunterPortrait
 }

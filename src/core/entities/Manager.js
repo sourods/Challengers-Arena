@@ -1,29 +1,24 @@
-import Player from './entities/Player';
 import {
     Warrior,
     Rogue,
     Mage,
     Hunter
-} from './entities/Classes';
+} from './Classes';
 
-class Game {
-    constructor() {
-        this.Player = new Player();
-    }
-
+export default class Manager {
     buildPlayer(classType) {
         switch (classType) {
             case 'Warrior':
-                this.Player = Warrior(this.Player);
+                Warrior(this.Player);
                 break;
             case 'Rogue':
-                this.Player = Rogue(this.Player);
+                Rogue(this.Player);
                 break;
             case 'Mage':
-                this.Player = Mage(this.Player);
+                Mage(this.Player);
                 break;
             case 'Hunter':
-                this.Player = Hunter(this.Player);
+                Hunter(this.Player);
                 break;
             default:
                 throw new Error('choose a valid class !');
@@ -31,4 +26,3 @@ class Game {
     }
 }
 
-export default new Game();
