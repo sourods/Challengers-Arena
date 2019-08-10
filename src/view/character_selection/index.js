@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './components/header';
-import Selection from './components/selection';
+import Header from './header';
+import Selection from './selection';
 
 import './index.css';
 
