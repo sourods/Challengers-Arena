@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { GameConsumer } from '../../Game';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 //classes portraits
 import WarriorPortrait from '../../portraits/classes/Warrior.png';
@@ -9,13 +9,26 @@ import MagePortrait from '../../portraits/classes/Mage.png';
 import HunterPortrait from '../../portraits/classes/Hunter.png';
 
 export default class Selection extends Component {
+    constructor(){
+        super();
+        this.state = {
+            classIsSelected: false
+        };
+    }
     render() {
+        if (this.state.classIsSelected) {
+            return <Redirect to='/arena' />
+        }
         return (
             <GameConsumer>
                 {(Engine) => {
                     const selectClass = (selectedClass) => {
                         Engine.buildPlayer(selectedClass);
+                        this.setState({
+                            'classIsSelected': true
+                        })
                     }
+        
                     return (
                         <section className="interface">
                             <div className="class" onClick={e => selectClass('Warrior')}>
@@ -58,9 +71,6 @@ export default class Selection extends Component {
                                 </p>
                                 </div>
                             </div>
-                            <button>
-                                <Link to="/arena/">Select Class</Link>
-                            </button>
                         </section>
                     );
                 }}
