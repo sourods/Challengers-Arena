@@ -3,6 +3,7 @@ import TrollPortrait from '../portraits/enemies/Troll.png';
 
 export const Goblin = (enemy) => { 
     enemy.maxMana = 100;
+    enemy.maxHealth = 100;
     enemy.strength = 100;
     enemy.agility = 200;
     enemy.speed = 150;
