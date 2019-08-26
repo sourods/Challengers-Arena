@@ -6,10 +6,10 @@ import HunterPortrait from '../portraits/classes/Hunter.png';
 export const Warrior = (character) =>{ //defense skills
     character.maxHealth = 200;
     character.maxMana = 70;
-    character.strength = 100;  
+    character.strength = 125;  
     character.agility = 70
-    character.speed = 50;
-    character.defense = 150;
+    character.speed = 60;
+    character.defense = 175;
     character.class = 'Warrior';
     character.portrait = WarriorPortrait;
 }
@@ -17,8 +17,8 @@ export const Warrior = (character) =>{ //defense skills
 export const Rogue = (character) => { //furtivity + blood stack
     character.maxHealth = 100;
     character.maxMana = 100;
-    character.strength = 100;
-    character.agility = 200;
+    character.strength = 75;
+    character.agility = 175;
     character.speed = 150;
     character.defense = 100;
     character.class = 'Rogue';
@@ -26,11 +26,11 @@ export const Rogue = (character) => { //furtivity + blood stack
 }
 
 export const Mage = (character) => { //elemental stack skills
-    character.maxHealth = 100;
-    character.maxMana = 200;
-    character.strength = 50;
-    character.agility = 200;
-    character.speed = 80;
+    character.maxHealth = 110;
+    character.maxMana = 210;
+    character.strength = 60;
+    character.agility = 140;
+    character.speed = 110;
     character.defense = 70;
     character.class = 'Mage';
     character.portrait = MagePortrait
