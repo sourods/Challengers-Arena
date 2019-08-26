@@ -3,9 +3,7 @@ import {
     Rogue,
     Mage,
     Hunter
-} from './Classes';
-import { random } from './Utils';
-import Enemy from './actors/Enemy';
+} from '../data/Classes';
 
 export default class Manager {
     buildPlayer(classType) {
@@ -24,13 +22,6 @@ export default class Manager {
                 break;
             default:
                 throw new Error('choose a valid class !');
-        }
-    }
-    searchForOpponent(enemies) {
-        if (enemies.length) {
-            return enemies[random(0, enemies.length)](new Enemy());
-        } else {
-            throw new Error('error finding an opponent')
         }
     }
 }

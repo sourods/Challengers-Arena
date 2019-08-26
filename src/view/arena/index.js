@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
 import { GameConsumer } from '../../Game';
 import { Redirect } from 'react-router-dom';
-
-import { Goblin, Troll } from '../../core/Enemies';
-
+import { arrayRandomItem, random } from '../../core/Utils';
+import { MountainFortress, FireTemple, RiverCave} from '../../data/Arenas';
+ 
 export default class Arena extends Component {
     constructor() {
         super();
         this.state = {
-            opponent: null
+            opponent: null,
+            selectedArena: this.chooseRandomArena()
         };
     }
+    chooseRandomArena(){
+        return arrayRandomItem([MountainFortress, FireTemple, RiverCave]);
+    }
     render() {
-        console.log('battle');
+
         return (
             <GameConsumer>
-                {({ Player, searchForOpponent }) => {
+                {({ Player, Enemy }) => {
+                    const searchForOpponent = (enemies) => {
+                        if (enemies.length) {
+                            let enemy = enemies[random(0, enemies.length)](new Enemy());
+                            enemy.revive();
+                            return enemy;
+                        } else {
+                            throw new Error('error finding an opponent')
+                        }
+                    }
                     if (Player.class) {
                         Player.revive();
                         return (
@@ -29,6 +42,8 @@ export default class Arena extends Component {
                                 <p>{Player.defense}</p>
                                 <p>{Player.agility}</p>
                                 <hr />
+                                <h2>Arena: {this.state.selectedArena.name}</h2>
+                                <hr />
                                 { this.state.opponent !== null ?
                                     <span>
                                         <img src={this.state.opponent.portrait} className='class_portrait' alt="Opponent portrait" />
@@ -41,7 +56,7 @@ export default class Arena extends Component {
                                         <p>{this.state.opponent.agility}</p>
                                     </span>
                                     : ''}
-                                <button onClick={e => this.setState({ opponent: searchForOpponent([Goblin, Troll]) })}>Challenge an Opponent !</button>
+                                <button onClick={e => this.setState({ opponent: searchForOpponent(this.state.selectedArena.enemies) })}>Challenge an Opponent !</button>
                             </div>
                         )
                     } else {
