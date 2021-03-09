@@ -1,9 +1,9 @@
-import NagaPortrait from '../portraits/enemies/Naga.png';
-import DragonPortrait from '../portraits/enemies/Dragon.png';
-import DivineGuardianPortrait from '../portraits/enemies/DivineGuardian.png';
-import FireLordPortrait from '../portraits/enemies/FireLord.png';
-import GoblinPortrait from '../portraits/enemies/Goblin.png';
-import OrcPortrait from '../portraits/enemies/Orc.png';
+import NagaPortrait from '../resources/images/portraits/enemies/Naga.png';
+import DragonPortrait from '../resources/images/portraits/enemies/Dragon.png';
+import DivineGuardianPortrait from '../resources/images/portraits/enemies/DivineGuardian.png';
+import FireLordPortrait from '../resources/images/portraits/enemies/FireLord.png';
+import GoblinPortrait from '../resources/images/portraits/enemies/Goblin.png';
+import OrcPortrait from '../resources/images/portraits/enemies/Orc.png';
 
 export const Naga = (enemy) => {
     enemy.maxHealth = 150;
@@ -14,7 +14,6 @@ export const Naga = (enemy) => {
     enemy.defense = 100;
     enemy.class = 'Naga';
     enemy.portrait = NagaPortrait
-    return enemy;
 }
 
 export const Dragon = (enemy) => {
@@ -26,7 +25,6 @@ export const Dragon = (enemy) => {
     enemy.defense = 150;
     enemy.class = 'Dragon';
     enemy.portrait = DragonPortrait
-    return enemy;
 }
 
 export const DivineGuardian = (enemy) => {
@@ -36,9 +34,8 @@ export const DivineGuardian = (enemy) => {
     enemy.agility = 70
     enemy.speed = 60;
     enemy.defense = 175;
-    enemy.race = 'Divine Guardian';
+    enemy.class = 'Divine Guardian';
     enemy.portrait = DivineGuardianPortrait
-    return enemy;
 }
 
 export const FireLord = (enemy) => {
@@ -50,7 +47,6 @@ export const FireLord = (enemy) => {
     enemy.defense = 70;
     enemy.class = 'Fire Lord';
     enemy.portrait = FireLordPortrait
-    return enemy;
 }
 
 export const Goblin = (enemy) => { 
@@ -60,9 +56,8 @@ export const Goblin = (enemy) => {
     enemy.agility = 175;
     enemy.speed = 150;
     enemy.defense = 100;
-    enemy.race = 'Goblin';
+    enemy.class = 'Goblin';
     enemy.portrait = GoblinPortrait;
-    return enemy;
 }
 
 export const Orc = (enemy) => {
@@ -72,7 +67,6 @@ export const Orc = (enemy) => {
     enemy.agility = 60
     enemy.speed = 60;
     enemy.defense = 175;
-    enemy.race = 'Orc';
+    enemy.class = 'Orc';
     enemy.portrait = OrcPortrait
-    return enemy;
 }

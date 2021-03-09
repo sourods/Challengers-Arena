@@ -1,7 +1,7 @@
-import WarriorPortrait from '../portraits/classes/Warrior.png';
-import RoguePortrait from '../portraits/classes/Rogue.png';
-import MagePortrait from '../portraits/classes/Mage.png';
-import HunterPortrait from '../portraits/classes/Hunter.png';
+import WarriorPortrait from '../resources/images/portraits/classes/Warrior.png';
+import RoguePortrait from '../resources/images/portraits/classes/Rogue.png';
+import MagePortrait from '../resources/images/portraits/classes/Mage.png';
+import HunterPortrait from '../resources/images/portraits/classes/Hunter.png';
 
 export const Warrior = (character) =>{ //defense skills
     character.maxHealth = 200;
@@ -39,9 +39,9 @@ export const Mage = (character) => { //elemental stack skills
 export const Hunter = (character) => { //trap skills
     character.maxHealth = 150;
     character.maxMana = 50;
-    character.strength = 50;
+    character.strength = 100;
     character.agility = 150;
-    character.speed = 200;
+    character.speed = 150;
     character.defense = 100;
     character.class = 'Hunter';
     character.portrait = HunterPortrait
